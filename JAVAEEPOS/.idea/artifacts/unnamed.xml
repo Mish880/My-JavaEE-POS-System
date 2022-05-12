@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="unnamed">
+    <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
+    <root id="root">
+      <element id="directory" name="lib">
+        <element id="archive" name="JAVAEEPOS.jar">
+          <element id="module-output" name="JAVAEEPOS" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="JAVAEEPOS/web/Web" />
+    </root>
+  </artifact>
+</component>
