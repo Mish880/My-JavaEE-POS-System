@@ -22,10 +22,10 @@ public class CustomerDaoImpl implements CrudDao <Customer,String> {
 
         while(rst.next()) {
             customer = new Customer(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4));
-            customerJSON.add("id", customer.getId());
-            customerJSON.add("name",customer.getName());
-            customerJSON.add("address",customer.getAddress());
-            customerJSON.add("contact",customer.getContact());
+            customerJSON.add("CusId", customer.getId());
+            customerJSON.add("CusName",customer.getName());
+            customerJSON.add("CusAddress",customer.getAddress());
+            customerJSON.add("CusContact",customer.getContact());
             customerArray.add(customerJSON.build());
 
         }
@@ -41,11 +41,11 @@ public class CustomerDaoImpl implements CrudDao <Customer,String> {
     @Override
     public boolean update(Customer customer) throws SQLException, ClassNotFoundException {
 
-        return CrudUtil.executeUpdate("UPDATE customer SET name=?,address=?,contact=? WHERE id=?", customer.getName() , customer.getAddress() , customer.getContact() , customer.getId());
+        return CrudUtil.executeUpdate("UPDATE customer SET CusName=?,CusAddress=?,CusContact=? WHERE CusId=?", customer.getName() , customer.getAddress() , customer.getContact() , customer.getId());
     }
 
     @Override
     public boolean delete(String customerID) throws SQLException, ClassNotFoundException {
-        return CrudUtil.executeUpdate("DELETE FROM customer WHERE id=?",customerID);
+        return CrudUtil.executeUpdate("DELETE FROM customer WHERE CusId=?",customerID);
     }
 }
