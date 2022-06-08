@@ -37,7 +37,7 @@ PlaceOrderBO placeOrderController = BOFactory.getBoFactory().getBo(BOFactory.BOT
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
     JsonObject orderJSON = Json.createReader(req.getReader()).readObject();
     orderDto order = new orderDto(orderJSON.getString("orderid"),orderJSON.getString("ordercusId"),orderJSON.getString("orderdate"),orderJSON.getString("ordertime"),Double.parseDouble(orderJSON.getString("ordercost")));
-   
+
      try{
          if (placeOrderController.addOrder(order)) {
 
