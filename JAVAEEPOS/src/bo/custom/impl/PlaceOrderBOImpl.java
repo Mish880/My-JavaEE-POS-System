@@ -4,7 +4,10 @@ import bo.custom.PlaceOrderBO;
 import db.DB;
 import dto.itemDto;
 import dto.orderDto;
+import dto.orderdetailDto;
+import entity.Orderdetails;
 
+import javax.json.JsonValue;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,6 +58,29 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
 
     @Override
     public boolean addOrderDetail(orderDto order) {
+      for (JsonValue temp : order.getOrderItems()) {
+          orderdetailDto orderdetaildto = new orderdetailDto(order.getOrderId(), temp.asJsonObject().getString("Itemid"), Integer.parseInt(temp.asJsonObject().getString("qty")),Double.parseDouble(temp.asJsonObject().getString("price")));
+
+          try{
+              pst = connection.prepareStatement("INSERT INTO orderdetails VALUES (?,?,?,?) ");
+              pst.setString(1,orderdetaildto.getOid());
+              pst.setString(2,orderdetaildto.getItemid());
+              pst.setInt(3,orderdetaildto.getQty());
+              pst.setDouble(4,orderdetaildto.getPrice());
+
+                if (pst.executeUpdate() > 0) {
+                    if (updateItemQty(orderdetaildto.getItemid(), orderdetaildto.getQty())) {
+
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+          } catch (SQLException throwables) {
+              throwables.printStackTrace();
+          }
+      }
         return false;
     }
 
@@ -70,10 +96,9 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
             }
 
             pst = connection.prepareStatement("UPDATE `item` SET `InStock`=? WHERE `ItemId`=?");
-
-
-
-            pst.setString(2,itemid);
+             /*int stock = item.getInStock() - orderqty;
+             pst.setInt(1, stock);*/    /*This is Update qty check it*/
+             pst.setString(2,itemid);
 
              return pst.executeUpdate() > 0;
 
