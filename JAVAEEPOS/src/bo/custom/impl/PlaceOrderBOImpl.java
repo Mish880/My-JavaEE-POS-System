@@ -96,9 +96,8 @@ public class PlaceOrderBOImpl implements PlaceOrderBO {
             }
 
             pst = connection.prepareStatement("UPDATE `item` SET `InStock`=? WHERE `ItemId`=?");
-             /*int stock = item.getInStock() - orderqty;
-             pst.setInt(1, stock);*/    /*This is Update qty check it*/
-             pst.setString(2,itemid);
+
+            pst.setString(2,itemid);
 
              return pst.executeUpdate() > 0;
 
