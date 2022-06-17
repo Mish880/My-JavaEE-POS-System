@@ -24,3 +24,20 @@ $('#btnSaveItem').click(function () {
         }
     });
 })
+
+function deleteItem(itemId) {
+     $.ajax({
+         url:"itemId="+itemId,
+         method:"DELETE",
+         success:function (resp) {
+              $.ajax({
+                  url:"item", method:"GET",
+                  success:function (resp) {
+                      loadAllItems(resp);
+
+                  }
+              });
+         }
+
+     })
+}

@@ -24,3 +24,18 @@ $('#btnSaveCustomer').click(function () {
          }
      })
 });
+
+function deleteCustomer(cusId) {
+    $.ajax({url:"customer? cusId="+cusId, method:"DELETE",
+      success:function (resp) {
+         $.ajax({url:"customer", method:"GET",
+           success: function (resp) {
+              loadAllCustomers(resp)
+
+           }
+         })
+
+      }
+    })
+
+}
