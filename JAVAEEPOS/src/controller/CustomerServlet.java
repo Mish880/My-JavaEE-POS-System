@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet(urlPatterns = "/customer")
@@ -33,15 +34,23 @@ public class CustomerServlet extends HttpServlet {
     }
 
   @Override
-  protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        try{
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+         Customer customer = new Customer(req.getParameter("txtCustomerAddId"), req.getParameter("txtCustomerAddName"),req.getParameter("txtCustomerAddAddress"),req.getParameter("txtCustomerAddContact"));
+         System.out.println(customer.getId());
+         System.out.println(customer.getName());
+         System.out.println(customer.getAddress());
+         System.out.println(customer.getContact());
+         PrintWriter writer = resp.getWriter();
+         writer.write("customer added");
+         /*try{
             Customer customer = new Customer(req.getParameter("txtCustomerAddId"), req.getParameter("txtCustomerAddName"),req.getParameter("txtCustomerAddAddress"),req.getParameter("txtCustomerAddContact"));
             customerDAO.add(customer);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
   }
 
  @Override

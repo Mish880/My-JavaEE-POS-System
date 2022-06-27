@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rolex Watch Complex</title>
+    <link rel="stylesheet" href="assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assests/fonts/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Mishel Perera" name="author">
+</head>
+<body>
+<main>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assests/images/Idlogo.png" alt="" width="25" height="30" class="d-inline-block align-text-top">
+                ROLEX
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" id="homeBtn">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="customer.html" id="customerBtn">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="item.html" id="itemBtn">Item</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="PlaceOrderFrom.html" id="PlaceOrderBtn">Place Order</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-success me-2" type="button">Sign Up</button>
+                    <button class="btn btn-sm btn-outline-secondary" type="button">Logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container-fluid mt-3">
+        <section class="row mt-3 justify-content-around">
+            <div class="col-12 col-md-4">
+                <h1 class="text-secondary">View Item Form</h1>
+                <div class="mb-3">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search Customer" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search Items</button>
+                    </form>
+                </div>
+
+                <div class="mb-3">
+                    <div class="card" style="width: 30rem;">
+                        <img src="assests/images/itemdash1.jpg" class="card-img-top" alt="Error Loading Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Select Any Item</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-5">
+                <button class="btn btn-success" id="btnSaveItem">Add New Item Details</button>
+                <button class="btn btn-danger" id="DeleteitemsBtn">Delete items </button>
+                <form id="itemformid">
+                <div class="mb-3">
+                    <label class="form-label" for="txtItemID">Item ID</label>
+                    <input class="form-control" id="txtItemID" placeholder="Item ID" type="text" name="txtItemAddId">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="txtItemName">Item Type</label>
+                    <input class="form-control" id="txtItemName" placeholder="Item Type" type="text" name="txtItemAddtype">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="txtInStock">In Stock</label>
+                    <input class="form-control" id="txtInStock" placeholder="In Stock" type="text" name="txtItemAddInStock">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="txtItemSalary">Item Price</label>
+                    <input class="form-control" id="txtItemSalary" placeholder="Item Salary" type="text" name="txtItemAddSalary">
+                </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="row mt-4">
+            <div class="col">
+                <table class="table table-bordered table-hover mt-3">
+                    <thead class="bg-danger text-white">
+                    <tr class="table-success">
+                        <th scope="col">Id</th>
+                        <th scope="col">Item Type</th>
+                        <th scope="col">In Stock</th>
+                        <th scope="col">Salary</th>
+                    </tr>
+                    </thead>
+                    <tbody id="itemTable">
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </section>
+</main>
+<script src="assests/js/bootstrap.min.js"></script>
+<script src="assests/jQuery/jquery-3.6.0.min.js"></script>
+<script src="model/item.js"></script>
+<script src="script/function/ItemFunction.js"></script>
+<script src="script/ajax/itemajax.js"></script>
+</body>
+</html>
