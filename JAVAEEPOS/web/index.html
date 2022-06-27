@@ -24,17 +24,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html" id="homeBtn">Home</a>
+                        <a class="nav-link" href="#" id="homeBtn">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="customer.html" id="customerBtn">Customer</a>
+                        <a class="nav-link" href="#" id="customerBtn">Customer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="item.html" id="itemBtn">Item</a>
+                        <a class="nav-link" href="#" id="itemBtn">Item</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="PlaceOrderFrom.html" id="PlaceOrderBtn">Place Order</a>
+                        <a class="nav-link" href="#" id="PlaceOrderBtn">Place Order</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -44,6 +44,8 @@
             </div>
         </div>
     </nav>
+ <section id="mainpage">
+
 
     <section class="container-fluid">
         <section class="row mt-2">
@@ -311,8 +313,303 @@
         </footer>
         <!-- Footer -->
     </section>
+ </section>
+
+
+
+    <section id="customerpage">
+        <section class="container-fluid mt-3">
+            <section class="row mt-3 justify-content-around">
+                <div class="col-12 col-md-4">
+                    <h1 class="text-secondary">View Customer Form</h1>
+                    <div class="mb-3">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search Customer" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search Customer</button>
+                        </form>
+                    </div>
+                    <div class="mb-3">
+                        <div class="card" style="width: 30rem;">
+                            <img src="assests/images/cutomerdash1.jpg" class="card-img-top" alt="Error loading image">
+                            <div class="card-body">
+                                <h5 class="card-title">Add Customer Details</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <button class="btn btn-success" type="button"  id="btnSaveCustomer">Add New Customer Details</button>
+                    <button class="btn btn-danger" type="button" id="customerDeleteBtn">Customer Delete</button>
+                    <div>
+                        <form id="customerformid">
+                            <div class="mb-3">
+
+                                <label class="form-label" for="txtCusID">Customer ID</label>
+                                <input class="form-control" id="txtCusID" placeholder="Customer ID" type="text" name="txtCustomerAddId">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="txtName">Customer Name</label>
+                                <input class="form-control" id="txtName" placeholder="Customer Name" type="text" name="txtCustomerAddName">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="txtAddress">Customer Address</label>
+                                <input class="form-control" id="txtAddress" placeholder="Customer Address" type="text" name="txtCustomerAddAddress">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="txtContact">Customer Contact</label>
+                                <input class="form-control" id="txtContact" placeholder="Customer Contact" type="text" name="txtCustomerAddContact">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="row mt-4">
+                <div class="col">
+                    <table class="table table-bordered table-hover mt-3">
+                        <thead class="bg-danger text-white">
+                        <tr class="table-success">
+                            <th scope="col">Id</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Contact</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cusTable">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <section id="itempage">
+
+        <section class="container-fluid mt-3">
+            <section class="row mt-3 justify-content-around">
+                <div class="col-12 col-md-4">
+                    <h1 class="text-secondary">View Item Form</h1>
+                    <div class="mb-3">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search Customer" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search Items</button>
+                        </form>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="card" style="width: 30rem;">
+                            <img src="assests/images/itemdash1.jpg" class="card-img-top" alt="Error Loading Image">
+                            <div class="card-body">
+                                <h5 class="card-title">Select Any Item</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <button class="btn btn-success" id="btnSaveItem">Add New Item Details</button>
+                    <button class="btn btn-danger" id="DeleteitemsBtn">Delete items </button>
+                    <form id="itemformid">
+                        <div class="mb-3">
+                            <label class="form-label" for="txtItemID">Item ID</label>
+                            <input class="form-control" id="txtItemID" placeholder="Item ID" type="text" name="txtItemAddId">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="txtItemName">Item Type</label>
+                            <input class="form-control" id="txtItemName" placeholder="Item Type" type="text" name="txtItemAddtype">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="txtInStock">In Stock</label>
+                            <input class="form-control" id="txtInStock" placeholder="In Stock" type="text" name="txtItemAddInStock">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="txtItemSalary">Item Price</label>
+                            <input class="form-control" id="txtItemSalary" placeholder="Item Salary" type="text" name="txtItemAddSalary">
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="row mt-4">
+                <div class="col">
+                    <table class="table table-bordered table-hover mt-3">
+                        <thead class="bg-danger text-white">
+                        <tr class="table-success">
+                            <th scope="col">Id</th>
+                            <th scope="col">Item Type</th>
+                            <th scope="col">In Stock</th>
+                            <th scope="col">Salary</th>
+                        </tr>
+                        </thead>
+                        <tbody id="itemTable">
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </section>
+
+    </section>
+
+
+    <section id="placeorderpage">
+        <section>
+            <div>
+                <h1 class="text-secondary">Place Order Form</h1>
+            </div>
+
+
+            <section class="container-fluid mt-3">
+                <section class="row mt-3 justify-content-around">
+
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 mb-2 bg-primary text-black">
+                            <h3>Invoice Details</h3>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ORDERID" class="form-label">Order ID :</label>
+                            <textarea class="form-control" id="ORDERID" rows="1"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtOrderDate">Order Date</label>
+                            <input class="form-control" id="txtOrderDate" type="date">
+                        </div>
+                        <div class="mb-3">
+                            <label class="fw-bold" for="cmbSelectCustomerId">Customer ID :</label>
+                            <select aria-label="Default select example" class="form-select " id="cmbSelectCustomerId"></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="CUSTOMERNAME" class="form-label">Name :</label>
+                            <textarea class="form-control" id="CUSTOMERNAME" rows="1"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="CUSTOMERADDRESS" class="form-label">Address :</label>
+                            <textarea class="form-control" id="CUSTOMERADDRESS" rows="1"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="CONTACT" class="form-label">Contact :</label>
+                            <textarea class="form-control" id="CONTACT" rows="1"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <div class="p-3 mb-2 bg-warning text-black">
+                            <h3>Select Item</h3>
+                        </div>
+
+                        <div>
+                            <div class="mb-3">
+                                <label class="fw-bold" for="cmbitemcode">Item Code</label>
+                                <select aria-label="Default select example" class="form-select " id="cmbitemcode">
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ITEMNAME" class="form-label">Item Name :</label>
+                                <textarea class="form-control" id="ITEMNAME" rows="1"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ORDERQUANTITY" class="form-label">Order Quantity :</label>
+                                <textarea class="form-control" id="ORDERQUANTITY" rows="1"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ITEMSALARY" class="form-label">Salary :</label>
+                                <textarea class="form-control" id="ITEMSALARY" rows="1"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-danger" id="btnAddToCart">Add Item</button>
+                            <button type="submit" class="btn btn-success" id="btnClearItemFields">Clear</button>
+
+                        </div>
+
+                        <div class="col-12 col-md-20">
+                            <div class="p-3 mb-2 bg-success text-black">
+                                <h3>Payment Details</h3>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label  for="txtTotal">Total (Rs.)</label>
+                                <input class="form-control border-dark" disabled id="txtTotal" type="text">
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label  for="txtNoOfItems">No Of Items</label>
+                                <input class="form-control border-dark" disabled id="txtNoOfItems" type="text">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label  for="txtCash">Cash (Rs.)</label>
+                                <input class="form-control border-dark" id="txtCash" type="number">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label class="fw-bold" for="txtBalance">Balance (Rs.)</label>
+                                <input class="form-control border-dark" disabled id="txtBalance" type="text">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-primary rounded-2 mt-2" type="submit" id="btnPlaceOrder">Place Order</button>
+                                    <button class="btn btn-secondary rounded-2 mt-2" type="submit" id="btnCancelOrder">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </section>
+            <section>
+                <div>
+                    <table class="table table-bordered table-hover mt-3">
+                        <thead class="bg-danger text-white">
+                        <tr class="table-success">
+                            <th scope="col">Id</th>
+                            <th scope="col">Item Type </th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Buy quantity</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cartTable">
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </section>
+    </section>
+
 </main>
 <script src="assests/js/bootstrap.min.js"></script>
 <script src="assests/jQuery/jquery-3.6.0.min.js"></script>
+<script src="script/script.js"></script>
+<script src="model/customer.js"></script>
+<script src="model/item.js"></script>
+<!--<script src="model/order.js"></script> -->
+<!--<script src="model/orderdetail.js"></script> -->
+<script src="script/ajax/customerajax.js"></script>
+<script src="script/ajax/itemajax.js"></script>
+<!--<script src="script/ajax/customerajax.js"></script> -->
+<script src="script/function/CustomerFunction.js"></script>
+<script src="script/function/ItemFunction.js"></script>
+<!--<script src="script/function/PlaceorderFunction.js"></script> -->
+
+
+
 </body>
 </html>

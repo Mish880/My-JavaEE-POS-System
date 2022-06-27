@@ -18,7 +18,7 @@ $('#btnSaveCustomer').click(function () {
     $('.customer').removeClass('black');
      var data = $('#customerformid').serialize();
      $.ajax({
-         url:"http://localhost:8081/JAVAEEPOS_Web_exploded/customer.html/customer",
+         url:"http://localhost:8081/JAVAEEPOS_Web_exploded/customer",
          method:"POST",
          data:data,
          success:function (resp) {
