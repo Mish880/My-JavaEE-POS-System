@@ -1,4 +1,4 @@
-🔰 Shopping Store POS System with Java EE...!
+🔰 Rolex Shopping Store POS System with Java EE...!
 
 ### Hi I'm Mishel Perera...!
 
